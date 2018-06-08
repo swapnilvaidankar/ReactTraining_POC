@@ -1,0 +1,23 @@
+{
+  "name": "reacttraining-poc",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "main": "src/index.js",
+  "dependencies": {
+    "bootstrap": "4.1.1",
+    "react": "16.3.2",
+    "react-dom": "16.3.2",
+    "react-redux": "latest",
+    "react-router": "4.3.1",
+    "react-scripts": "1.1.4",
+    "redux": "latest"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

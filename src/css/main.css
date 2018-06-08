@@ -1,0 +1,44 @@
+.postList {
+  list-style: none;
+  padding: 10px;
+  border: 1px solid lightgray;
+  border-radius: 15px;
+  margin: 5px 0px;
+  display: flex;
+  justify-content: space-between;
+}
+.addPostButton {
+  text-align: right;
+}
+.viewPost-btn {
+  display: flex;
+  justify-content: space-between;
+}
+.viewPost-panel {
+  border: 1px solid lightgray;
+  border-radius: 15px;
+}
+.label {
+  font-weight: bold;
+}
+.comments {
+  text-align: justify;
+  /* font-weight: 300; */
+}
+li:hover {
+  background-color: lightgrey;
+  cursor: pointer;
+}
+.postTitle {
+  font-weight: 300;
+  color: blue;
+}
+.category {
+  color: blue;
+  font-style: italic;
+}
+.addPost {
+  border: 1px solid lightgrey;
+  border-radius: 15px;
+  padding: 15px;
+}
