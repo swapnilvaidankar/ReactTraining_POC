@@ -14,10 +14,16 @@ export function addPost() {
   console.log("AddPost");
   return {
     type: "ADD_POST",
-    payload: {
-      postTitle: "postTitle test",
-      postCategory: "postCat test",
-      postcomment: "postcomment test"
-    }
+    payload: [
+      {
+        postTitle: "Test comment"
+      }
+    ]
+
+    // {
+    //   postTitle: "postTitle test",
+    //   postCategory: "postCat test",
+    //   postcomment: "postcomment test"
+    // }
   };
 }

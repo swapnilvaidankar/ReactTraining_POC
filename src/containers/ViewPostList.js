@@ -4,19 +4,16 @@ import { bindActionCreators } from "redux";
 import { selectedPost } from "../actions/index";
 
 class ViewPostList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.callChildMethod = this.callChildMethod.bind(this);
-  }
-  callChildMethod(post) {
-    this.props.backToList("true");
-    this.props.selectedPost(post);
-  }
   render() {
-    // if (!this.props.posts) {
-    //   return <div>Please add post</div>;
-    // } else {
-    const posts = this.props.posts.map(post => (
+    console.log("List", this.props.posts);
+    if (this.props.posts.length === 0) {
+      return (
+        <div className="text-center">
+          <h5>Please add post</h5>
+        </div>
+      );
+    }
+    const posts = this.props.posts.posts.map(post => (
       <li
         key={post.postTitle}
         className="postList"
@@ -25,10 +22,9 @@ class ViewPostList extends React.Component {
         }}
       >
         <div>{post.postTitle}</div>
-        <div className="category">{post.postCategory}</div>
+        {/*<div className="category">{post.postCategory}</div>*/}
       </li>
     ));
-    // }
     return (
       <div className="container ">
         <div className="row">
@@ -47,7 +43,8 @@ class ViewPostList extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    posts: state.posts
+    // posts: state.posts.posts
+    posts: state.addPost
   };
 }
 function mapDispatchToProps(dispatch) {

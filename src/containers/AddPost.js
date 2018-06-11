@@ -4,8 +4,33 @@ import { bindActionCreators } from "redux";
 import { addPost } from "../actions";
 
 class AddPost extends React.Component {
+  constructor(props) {
+    super(props);
+    // this.handleClick = this.handleClick.bind(this);
+  }
   render() {
+    let values;
+    // debugger;
     console.log("AddPost component");
+    console.log("AddPost 1: ", JSON.stringify(this.props.addPost1));
+    console.log("AddPost 2: ", this.props.addPost1);
+    console.log("AddPost posts : ", JSON.stringify(this.props.posts));
+    console.log("AddPost posts : ", this.props.posts);
+    console.log("AddPost posts props : ", JSON.stringify(this.props));
+    console.log("AddPost posts props : ", JSON.stringify(this.props.addPost1));
+    // if (this.props.addPost1) {
+    //   console.log(
+    //     "AddPost posts props : ",
+    //     JSON.stringify(this.props.addPost1)
+    //   );
+    // }
+    // console.log("AddPost posts props : ", JSON.stringify(this.props.addPost1));
+    // function handleClick(e) {
+    //   console.log("event obje ", e.target.value);
+    // }
+    function handleChange(e) {
+      console.log("handle change called");
+    }
     return (
       <div className="container addPost">
         <div className="row">
@@ -17,7 +42,11 @@ class AddPost extends React.Component {
           <div className="col-sm-4" />
           <div className="col-sm-4">
             <label>Title</label>
-            <input type="text" className="form-control" />
+            <input
+              type="text"
+              className="form-control"
+              // onChange={this.handleChange.bind(this)}
+            />
           </div>
           <div className="col-sm-4" />
         </div>
@@ -44,6 +73,7 @@ class AddPost extends React.Component {
             <button
               className="btn btn-primary"
               onClick={() => this.props.addPost()}
+              // onClick={() => this.handleClick()}
             >
               Save
             </button>
@@ -57,9 +87,14 @@ class AddPost extends React.Component {
     );
   }
 }
-
-function mapDispatchtoProps(dispatch) {
+function mapStateToProps(state) {
+  return {
+    addPost1: state.addPost,
+    posts: state.posts
+  };
+}
+function mapDispatchToProps(dispatch) {
   return bindActionCreators({ addPost: addPost }, dispatch);
 }
 
-export default connect(mapDispatchtoProps)(AddPost);
+export default connect(mapStateToProps, mapDispatchToProps)(AddPost);
