@@ -55,7 +55,11 @@ class ViewPostList extends React.Component {
     return (
       <div className="container ">
         <div className="row">
-          <div className="col-sm-12 addPostButton" />
+          <div className="col-sm-12 addPostButton">
+            <Link to="/addPost">
+              <button className="btn btn-primary">Add Post</button>
+            </Link>
+          </div>
         </div>
         <br />
         <div className="row">

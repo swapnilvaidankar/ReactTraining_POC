@@ -17,29 +17,17 @@ class Post extends React.Component {
         ""
       );
 
-    if (!this.props.flag) {
+    if (!this.props.flag || this.props.flag.viewList) {
       return (
         <div>
           {renderComponents}
           <ViewPostList />
-          <AddPost />
         </div>
         // { renderComponents }
       );
     } else {
-      if (this.props.flag.viewList) {
-        // console.log("if viewList --------->" + this.props.flag.viewList);
-        return (
-          <div>
-            {renderComponents}
-            <ViewPostList />
-            <AddPost />
-          </div>
-        );
-      } else {
-        // console.log("else viewList --------->" + this.props.flag.viewList);
-        return <ViewPost />;
-      }
+      // console.log("else viewList --------->" + this.props.flag.viewList);
+      return <ViewPost />;
     }
   }
 }
