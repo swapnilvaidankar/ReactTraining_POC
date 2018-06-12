@@ -33,7 +33,6 @@ class ViewPost extends React.Component {
             >
               Back to list
             </button>
-            <button className="btn btn-primary">Delete Post</button>
           </div>
         </div>
         <br />

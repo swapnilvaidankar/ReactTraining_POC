@@ -6,6 +6,7 @@
   margin: 5px 0px;
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 .addPostButton {
   text-align: right;
@@ -41,4 +42,21 @@ li:hover {
   border: 1px solid lightgrey;
   border-radius: 15px;
   padding: 15px;
+}
+.icon_delete {
+  width: 30px;
+  height: auto;
+  cursor: pointer;
+}
+.list {
+  display: flex;
+  justify-content: space-between;
+}
+.delete_section {
+  padding: 10px;
+}
+.title {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 300;
 }

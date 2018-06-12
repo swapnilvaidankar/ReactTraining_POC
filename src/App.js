@@ -6,7 +6,7 @@ const store = createStore(reducers);
 // import ViewPostList from "./containers/ViewPostList";
 // import ViewPost from "./containers/ViewPost";
 
-class App extends React.Component {
+export default class App extends React.Component {
   componentDidMount() {
     store.subscribe(() => this.forceUpdate());
     console.log("App did mount");
@@ -32,4 +32,4 @@ class App extends React.Component {
 //   );
 // };
 
-export default App;
+// export default App;

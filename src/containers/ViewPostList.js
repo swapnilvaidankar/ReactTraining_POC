@@ -2,8 +2,25 @@ import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { selectedPost } from "../actions/index";
+import { Link } from "react-router-dom";
+import { deletePost } from "../actions/index";
+import { Router, Route, browserHistory } from "react-router";
 
 class ViewPostList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+  routeToAddPost(e) {
+    console.log("Add clicked");
+    e.preventDefault();
+    // this.context.router.transitionTo("/");
+    this.context.router.push("/addPost");
+  }
+  handleClick(id) {
+    this.props.deletePost(id);
+    console.log("delete click");
+  }
   render() {
     console.log("List", this.props.posts);
     if (this.props.posts.length === 0) {
@@ -14,23 +31,31 @@ class ViewPostList extends React.Component {
       );
     }
     const posts = this.props.posts.posts.map(post => (
-      <li
-        key={post.postTitle}
-        className="postList"
-        onClick={() => {
-          this.props.selectedPost(post, false);
-        }}
-      >
-        <div>{post.postTitle}</div>
-        {/*<div className="category">{post.postCategory}</div>*/}
-      </li>
+      <div className="list">
+        <li
+          key={post.postTitle}
+          className="postList"
+          onClick={() => {
+            this.props.selectedPost(post, false);
+          }}
+        >
+          <div>{post.postTitle}</div>
+          <div className="category">{post.postCategory}</div>
+        </li>
+        <div className="delete_section">
+          <img
+            src="https://uploads.codesandbox.io/uploads/user/9e6e799f-0e02-41b8-84c3-cfbe4ceb14fa/j2Gb-delete.png"
+            alt="delete"
+            className="icon_delete"
+            onClick={() => this.handleClick(post.postTitle)}
+          />
+        </div>
+      </div>
     ));
     return (
       <div className="container ">
         <div className="row">
-          <div className="col-sm-12 addPostButton">
-            <button className="btn btn-primary ">Add Post</button>
-          </div>
+          <div className="col-sm-12 addPostButton" />
         </div>
         <br />
         <div className="row">
@@ -48,6 +73,9 @@ function mapStateToProps(state) {
   };
 }
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ selectedPost: selectedPost }, dispatch);
+  return bindActionCreators(
+    { selectedPost: selectedPost, deletePost: deletePost },
+    dispatch
+  );
 }
 export default connect(mapStateToProps, mapDispatchToProps)(ViewPostList);
