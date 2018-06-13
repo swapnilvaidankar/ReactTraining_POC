@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 import PostReducer from "./reducer_post";
 import ActivePostReducer from "./reducer_selectPost";
 import BackToList from "./reducer_backToList";
-import AddPost from "./reducer_addPost";
+import AddPost from "./reducer_PostActions";
 
 // import reducers from "../reducers";
 // import { createStore } from "redux";
