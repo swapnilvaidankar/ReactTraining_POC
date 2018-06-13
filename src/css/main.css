@@ -27,15 +27,17 @@
   /* font-weight: 300; */
 }
 li:hover {
-  background-color: lightgrey;
+  background-color: lightseagreen;
   cursor: pointer;
+  color: white;
 }
 .postTitle {
   font-weight: 300;
-  color: blue;
+  letter-spacing: 3px;
+  color: teal;
+  text-transform: uppercase;
 }
 .category {
-  color: blue;
   font-style: italic;
 }
 .addPost {
@@ -59,4 +61,35 @@ li:hover {
   letter-spacing: 2px;
   text-transform: uppercase;
   font-weight: 300;
+}
+.post-labels {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 300;
+  background-color: lightseagreen;
+  color: white;
+  width: 100%;
+  padding: 2px;
+}
+.post-labels-list {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 300;
+  background-color: lightseagreen;
+  color: white;
+  padding: 2px;
+}
+.error-msg {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+.btn {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px !important;
+  border-radius: 0px !important;
+  background-color: teal !important;
 }

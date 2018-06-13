@@ -6,24 +6,13 @@ import AddPost from "./AddPost";
 
 class Post extends React.Component {
   render() {
-    console.log("POSTS --------------->", this.props.posts);
-    console.log("POSTS --------------->", this.props.posts.posts.length);
-    const renderComponents =
-      this.props.posts.posts.length === 0 ? (
-        <div>
-          <h4>Oops! no post found... you can add the post..</h4>
-        </div>
-      ) : (
-        ""
-      );
-
+    // console.log("POSTS --------------->", this.props.posts);
+    // console.log("POSTS --------------->", this.props.posts.posts.length);
     if (!this.props.flag || this.props.flag.viewList) {
       return (
         <div>
-          {renderComponents}
           <ViewPostList />
         </div>
-        // { renderComponents }
       );
     } else {
       // console.log("else viewList --------->" + this.props.flag.viewList);

@@ -23,13 +23,32 @@ class ViewPostList extends React.Component {
   }
   render() {
     console.log("List", this.props.posts);
-    if (this.props.posts.length === 0) {
+    if (this.props.posts.posts.length === 0) {
       return (
-        <div className="text-center">
-          <h5>Please add post</h5>
+        <div className="container ">
+          <div className="row">
+            <div className="col-sm-8">
+              <h4 className="error-msg">
+                Oops! no post found... you can add the post..
+              </h4>
+            </div>
+            <div className="col-sm-4 addPostButton">
+              <Link to="/addPost">
+                <button className="btn btn-primary">Add Post</button>
+              </Link>
+            </div>
+          </div>
+          <br />
         </div>
       );
     }
+    // if (this.props.posts.length === 0) {
+    //   return (
+    //     <div className="text-center">
+    //       <h5>Please add post</h5>
+    //     </div>
+    //   );
+    // }
     const posts = this.props.posts.posts.map(post => (
       <div className="list">
         <li
@@ -39,8 +58,18 @@ class ViewPostList extends React.Component {
             this.props.selectedPost(post, false);
           }}
         >
-          <div>{post.postTitle}</div>
-          <div className="category">{post.postCategory}</div>
+          <div>
+            <div>
+              <label className="post-labels-list">Title</label>
+            </div>
+            <div>{post.postTitle}</div>
+          </div>
+          <div>
+            <div>
+              <label className="post-labels-list">Categories</label>
+            </div>
+            <div className="category">{post.postCategory}</div>
+          </div>
         </li>
         <div className="delete_section">
           <img

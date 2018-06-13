@@ -2,6 +2,8 @@ import React from "react";
 import Post from "./containers/Post";
 import reducers from "./reducers";
 import { createStore } from "redux";
+// import ViewPostList from "./containers/ViewPostList";
+// import AddPost from "./containers/AddPost";
 const store = createStore(reducers);
 // import ViewPostList from "./containers/ViewPostList";
 // import ViewPost from "./containers/ViewPost";

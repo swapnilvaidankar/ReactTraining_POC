@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { addPost } from "../actions";
-
+import { Link } from "react-router-dom";
 class AddPost extends React.Component {
   constructor(props) {
     super(props);
@@ -63,9 +63,9 @@ class AddPost extends React.Component {
           </div>
         </div>
         <div className="row">
-          <div className="col-sm-4" />
-          <div className="col-sm-4">
-            <label>Title</label>
+          <div className="col-sm-3" />
+          <div className="col-sm-6">
+            <label className="post-labels">Title</label>
             <input
               type="text"
               className="form-control"
@@ -73,12 +73,12 @@ class AddPost extends React.Component {
               value={this.state.postTitle}
             />
           </div>
-          <div className="col-sm-4" />
+          <div className="col-sm-3" />
         </div>
         <div className="row">
-          <div className="col-sm-4" />
-          <div className="col-sm-4">
-            <label>Categories</label>
+          <div className="col-sm-3" />
+          <div className="col-sm-6">
+            <label className="post-labels">Categories</label>
             <input
               type="text"
               className="form-control"
@@ -86,12 +86,12 @@ class AddPost extends React.Component {
               value={this.state.postCategory}
             />
           </div>
-          <div className="col-sm-4" />
+          <div className="col-sm-3" />
         </div>
         <div className="row">
-          <div className="col-sm-4" />
-          <div className="col-sm-4">
-            <label>Comment</label>
+          <div className="col-sm-3" />
+          <div className="col-sm-6">
+            <label className="post-labels">Comment</label>
             <input
               type="text"
               className="form-control"
@@ -99,19 +99,21 @@ class AddPost extends React.Component {
               value={this.state.postComment}
             />
           </div>
-          <div className="col-sm-4" />
+          <div className="col-sm-3" />
         </div>
         <hr />
         <div className="row">
           <div className="col-sm-4" />
           <div className="col-sm-4 text-center">
-            <button
-              className="btn btn-primary"
-              // onClick={() => this.props.addPost()}
-              onClick={() => this.handleClick()}
-            >
-              Save
-            </button>
+            <Link to="/viewPostList">
+              <button
+                className="btn btn-primary"
+                // onClick={() => this.props.addPost()}
+                onClick={() => this.handleClick()}
+              >
+                Save
+              </button>
+            </Link>
           </div>
           <div className="col-sm-4" />
         </div>

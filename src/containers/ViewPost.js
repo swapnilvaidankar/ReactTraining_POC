@@ -44,7 +44,7 @@ class ViewPost extends React.Component {
         <div className="row">
           <div className="col-sm-12">
             <div>
-              <label className="label">Categories</label>
+              <label className="post-labels">Categories</label>
               <br />
               <label>{post.postCategory}</label>
             </div>
@@ -53,7 +53,7 @@ class ViewPost extends React.Component {
         <div className="row">
           <div className="col-sm-12">
             <div>
-              <label className="label">Comments</label>
+              <label className="post-labels">Comments</label>
               <br />
               <label className="comments">{post.postComment}</label>
             </div>
