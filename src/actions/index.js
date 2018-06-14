@@ -38,3 +38,11 @@ export function deletePost(id) {
     payload: id
   };
 }
+
+export function showAdd(flag) {
+  console.log("Action ShowAdd", flag);
+  return {
+    type: "SHOW_ADD",
+    payload: flag
+  };
+}

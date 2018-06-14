@@ -4,6 +4,10 @@ export default function(state = null, action) {
       console.log("select action.payload");
       console.log(action.payload);
       return action.payload;
+    case "SHOW_POST":
+      console.log("Show action.payload");
+      console.log(action.payload);
+      return action.payload;
     // default:
     //   return state;
   }

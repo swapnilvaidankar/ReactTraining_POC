@@ -1,25 +1,26 @@
 import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { selectedPost } from "../actions/index";
+// import { selectedPost } from "../actions/index";
 import { Link } from "react-router-dom";
-import { deletePost } from "../actions/index";
+import { selectedPost, deletePost } from "../actions/index";
+import { showAdd } from "../actions/index";
 import { Router, Route, browserHistory } from "react-router";
 
 class ViewPostList extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
+    this.handleAddPost = this.handleAddPost.bind(this);
   }
-  routeToAddPost(e) {
-    console.log("Add clicked");
-    e.preventDefault();
-    // this.context.router.transitionTo("/");
-    this.context.router.push("/addPost");
-  }
+
   handleClick(id) {
     this.props.deletePost(id);
     console.log("delete click");
+  }
+  handleAddPost(flag) {
+    console.log("handleAddPost");
+    this.props.showAdd(flag);
   }
   render() {
     console.log("List", this.props.posts);
@@ -33,8 +34,13 @@ class ViewPostList extends React.Component {
               </h4>
             </div>
             <div className="col-sm-4 addPostButton">
-              <Link to="/addPost">
-                <button className="btn btn-primary">Add Post</button>
+              <Link to="/viewPostList">
+                <button
+                  className="btn btn-primary"
+                  onClick={() => this.handleAddPost(true)}
+                >
+                  Add Post
+                </button>
               </Link>
             </div>
           </div>
@@ -85,9 +91,13 @@ class ViewPostList extends React.Component {
       <div className="container ">
         <div className="row">
           <div className="col-sm-12 addPostButton">
-            <Link to="/addPost">
-              <button className="btn btn-primary">Add Post</button>
-            </Link>
+            <Link to="/viewPostList" />
+            <button
+              className="btn btn-primary"
+              onClick={() => this.handleAddPost(true)}
+            >
+              Add Post
+            </button>
           </div>
         </div>
         <br />
@@ -107,7 +117,7 @@ function mapStateToProps(state) {
 }
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
-    { selectedPost: selectedPost, deletePost: deletePost },
+    { selectedPost: selectedPost, deletePost: deletePost, showAdd: showAdd },
     dispatch
   );
 }

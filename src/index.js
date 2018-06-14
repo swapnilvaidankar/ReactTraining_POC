@@ -5,7 +5,7 @@ import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import reducers from "./reducers";
 // import routes from "./routes";
-import { Router, browserHistory, Switch } from "react-router";
+// import { Router, browserHistory, Switch } from "react-router";
 import { BrowserRouter, Route } from "react-router-dom";
 import App from "./App";
 import "./css/main.css";
@@ -24,10 +24,9 @@ console.log(store.getState());
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <switch>
+      <div>
         <Route path="/" component={App} />
-        <Route path="/addPost" component={AddPost} />
-      </switch>
+      </div>
     </BrowserRouter>
   </Provider>,
   document.getElementById("root")

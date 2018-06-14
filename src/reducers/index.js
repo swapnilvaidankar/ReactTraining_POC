@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
 import PostReducer from "./reducer_post";
 import ActivePostReducer from "./reducer_selectPost";
-import BackToList from "./reducer_backToList";
 import AddPost from "./reducer_PostActions";
+import ShowAdd from "./reducer_utility";
 
 // import reducers from "../reducers";
 // import { createStore } from "redux";
@@ -10,8 +10,8 @@ import AddPost from "./reducer_PostActions";
 const rootReducer = combineReducers({
   posts: PostReducer,
   selectedPost: ActivePostReducer,
-  backToList: BackToList,
-  addPost: AddPost
+  addPost: AddPost,
+  showAdd: ShowAdd
 });
 
 // const store = createStore(rootReducer);

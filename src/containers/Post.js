@@ -8,15 +8,17 @@ class Post extends React.Component {
   render() {
     // console.log("POSTS --------------->", this.props.posts);
     // console.log("POSTS --------------->", this.props.posts.posts.length);
-    if (!this.props.flag || this.props.flag.viewList) {
-      return (
-        <div>
-          <ViewPostList />
-        </div>
-      );
+    // console.log("showAdd --------------->", this.props.showAdd);
+    // console.log("else viewList --------->" + this.props.flag.viewList);
+
+    if (this.props.showAdd) {
+      return <AddPost />;
     } else {
-      // console.log("else viewList --------->" + this.props.flag.viewList);
-      return <ViewPost />;
+      if (!this.props.flag || this.props.flag.viewList) {
+        return <ViewPostList />;
+      } else {
+        return <ViewPost />;
+      }
     }
   }
 }
@@ -24,7 +26,8 @@ class Post extends React.Component {
 function mapStateToProps(state) {
   return {
     flag: state.selectedPost,
-    posts: state.addPost
+    posts: state.addPost,
+    showAdd: state.showAdd
   };
 }
 
